@@ -1,5 +1,5 @@
 body{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', sans-serif;
 }
 
 table{
@@ -11,4 +11,9 @@ table{
 
 th, td{
     padding: 0 1em;
+}
+
+.code-container{
+    border:1px solid #ddd;
+    display:inline-block;
 }
