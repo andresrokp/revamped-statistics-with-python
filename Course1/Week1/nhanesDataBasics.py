@@ -1,12 +1,10 @@
 import pandas as pd;
 from tabulate import tabulate;
 
-url = "nhanes_2015_2016.csv";
+url = "./nhanes_2015_2016.csv";
 df = pd.read_csv(url);
 
 print(df.columns);
-
-
 
 shape = df.shape;
 
@@ -45,7 +43,7 @@ render = f"""
         <title>Data Render</title>
     </head>
     <body>
-        <a href="/index.html"> <button>Home</button> </a>
+        <a href="../../index.html"> <button>Home</button> </a>
         <a href="nhanesDataBasics.py"> <button>Code</button> </a>
         
         <h1>Data Render by andresrokp</h1>
@@ -127,5 +125,5 @@ render = f"""
 # LESSON LEARNT : insert variable into html - https://stackoverflow.com/questions/10112614/how-do-i-create-a-multiline-python-string-with-inline-variables
 #                                           - https://stackoverflow.com/questions/11764900/using-locals-and-format-method-for-strings-are-there-any-caveats
 
-with open('afrp-nhanesDataRender.html', 'w') as f:
+with open('./afrp-nhanesDataRender.html', 'w') as f:
     f.write(render);
