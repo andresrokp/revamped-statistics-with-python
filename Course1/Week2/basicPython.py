@@ -237,13 +237,12 @@ plt.subplot(2,1,2)
 plt.plot(x, y_cos)
 plt.title("Cosine")
 
+
 # %%
 
 url = "Cartwheeldata.csv"
 
 df = pd.read_csv(url)
-
-
 
 sns.lmplot(x='Wingspan', y='CWDistance', data=df)
 plt.show()
@@ -254,4 +253,19 @@ plt.show()
 sns.lmplot(x='Wingspan', y='CWDistance', data=df, fit_reg=False, hue="Gender")
 plt.show()
 
+# %%
+
+sns.boxplot(data=df.loc[:,["Age", "Height", "Wingspan", "CWDistance", "Score"]])
+# %%
+sns.boxplot(data=df.loc[df["Gender"] == "M",["Age", "Height", "Wingspan", "CWDistance", "Score"]])
+plt.show()
+sns.boxplot(data=df.loc[df["Gender"] == "F",["Age", "Height", "Wingspan", "CWDistance", "Score"]])
+plt.show()
+
+
+
+# %%
+
+sns.countplot(data=df, x="Glasses")
+plt.xticks(rotation=-45)
 # %%
